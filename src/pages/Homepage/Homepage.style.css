@@ -1,0 +1,6 @@
+.container {
+  width: 100%;
+  background-color: black;
+  min-height: 100vh; /* 화면 전체 높이를 차지하도록 추가 */
+  color: white;
+}
