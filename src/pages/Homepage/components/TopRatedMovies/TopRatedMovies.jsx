@@ -1,11 +1,10 @@
 import React from "react";
-import { usePopularMoviesQuery } from "../../../../hooks/usePopularMovies";
 import { Alert } from "react-bootstrap";
 import MovieSlider from "../../../../common/MovieSlider/MovieSlider";
 import { responsive } from "../../../../constants/responsive";
-const PopularMovieSlide = () => {
-  const { data, isLoading, error, isError } = usePopularMoviesQuery();
-
+import { useTopRatedMoviesQuery } from "../../../../hooks/useTopRatedMovie";
+const TopRatedMovies = () => {
+  const { data, isError, error, isLoading } = useTopRatedMoviesQuery();
   if (isLoading) {
     return <h1>Loading..</h1>;
   }
@@ -13,12 +12,10 @@ const PopularMovieSlide = () => {
   if (isError) {
     return <Alert variant="danger">{error.message}</Alert>;
   }
-
-  // movies prop에 data 전체를 전달
   return (
     <div>
       <MovieSlider
-        title="Popular Movies"
+        title="Top Rated Movies"
         movies={data} // data만 전달
         responsive={responsive}
       />
@@ -26,4 +23,4 @@ const PopularMovieSlide = () => {
   );
 };
 
-export default PopularMovieSlide;
+export default TopRatedMovies;
