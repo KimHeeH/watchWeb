@@ -2,9 +2,11 @@ import React from "react";
 import Badge from "react-bootstrap/Badge";
 import "./MovieCard.style.css";
 import { useMovieGenreQuery } from "../../hooks/useMovieGenre";
+import { useNavigate } from "react-router-dom";
 const MovieCard = ({ movie }) => {
   const posterPath = movie?.poster_path;
   const { data: genreData } = useMovieGenreQuery();
+  const navigate = useNavigate();
   const showGenre = (genreIdList) => {
     if (!genreData) return [];
     const genreNameList = genreIdList.map((id) => {
@@ -13,7 +15,9 @@ const MovieCard = ({ movie }) => {
     });
     return genreNameList;
   };
-  console.log("ggg", genreData);
+  const goMovieDetailPage = (movie) => {
+    navigate(`/movies/${movie.id}`, movie);
+  };
   return (
     <div
       style={{
@@ -23,6 +27,7 @@ const MovieCard = ({ movie }) => {
           ")",
       }}
       className="movie-card"
+      onClick={() => goMovieDetailPage(movie)} // 함수 호출이 아닌 함수 전달로 변경
     >
       <div className="overlay">
         <h1>{movie.title}</h1>

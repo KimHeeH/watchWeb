@@ -9,5 +9,6 @@ export const useMovieGenreQuery = () => {
     queryFn: fetchMovieGenre,
     select: (result) => result.data.genres,
     staleTime: 300000,
+    
   });
 };

@@ -15,11 +15,17 @@ const AppLayout = () => {
     navigate(`/movies?q=${keyword}`);
     setKeyword("");
   };
+  const goHomepage = () => {
+    navigate("/");
+  };
+  const goMoviePage = () => {
+    navigate("/movies");
+  };
   return (
     <div className="container">
       <Navbar style={{ backgroundColor: "black ! important" }}>
         <Container fluid>
-          <Navbar.Brand href="#">
+          <Navbar.Brand href="#" onClick={goHomepage}>
             <img
               src="https://loodibee.com/wp-content/uploads/Netflix-logo.png"
               width="100"
@@ -32,10 +38,18 @@ const AppLayout = () => {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link style={{ color: "white" }} href="#action1">
+              <Nav.Link
+                style={{ color: "white" }}
+                href="#action1"
+                onClick={goHomepage}
+              >
                 Home
               </Nav.Link>
-              <Nav.Link style={{ color: "white" }} href="#action2">
+              <Nav.Link
+                style={{ color: "white" }}
+                href="#action2"
+                onClick={goMoviePage}
+              >
                 Movies
               </Nav.Link>
             </Nav>

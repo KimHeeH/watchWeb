@@ -5,7 +5,7 @@ import MovieSlider from "../../../../common/MovieSlider/MovieSlider";
 import { responsive } from "../../../../constants/responsive";
 const PopularMovieSlide = () => {
   const { data, isLoading, error, isError } = usePopularMoviesQuery();
-
+  console.log("ddd", data);
   if (isLoading) {
     return <h1>Loading..</h1>;
   }
