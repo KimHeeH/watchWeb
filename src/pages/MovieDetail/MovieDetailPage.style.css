@@ -21,3 +21,29 @@
   justify-content: center;
   height: 60px;
 }
+.video {
+  color: red;
+  margin-top: 20px;
+  margin-left: 15px;
+  cursor: pointer;
+  width: 125px;
+}
+.video:hover {
+  border: 1px solid red;
+}
+.videobox {
+  width: 100%;
+}
+.modal-dark-background .modal-header .btn-close {
+  filter: invert(1); /* Inverts the close button color to white */
+}
+
+.modal-dark-background .modal-content {
+  background-color: black; /* Sets the modal background to black */
+  color: white; /* Sets the text color to white */
+}
+
+.modal-dark-background .modal-header {
+  background-color: black; /* Sets the modal header background to black */
+  color: white; /* Sets the header text color to white */
+}

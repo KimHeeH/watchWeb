@@ -7,12 +7,31 @@ import "./MovieDetailPage.style.css";
 import MovieReview from "../Homepage/components/MovieReview/MovieReview";
 import Button from "react-bootstrap/Button";
 import MovieRecommended from "../Homepage/components/MovieRecommended/MovieRecommended";
+import Modal from "react-bootstrap/Modal";
+import YouTube from "react-youtube";
+import { useMovieVideoQuery } from "../../hooks/useMovieVideo";
 
 const MovieDetail = () => {
   const { id } = useParams();
   const { data, isLoading, error, isError } = useMovieDetailQuery(id);
   const [activeTab, setActiveTab] = useState(null); // 하나의 상태로 관리
+  const values = [true];
+  const [fullscreen, setFullscreen] = useState(true);
+  const [show, setShow] = useState(false);
+  const { data: movieVideoData } = useMovieVideoQuery(id);
+  let videoKey = movieVideoData?.[0]?.key;
 
+  const trailer = movieVideoData?.find((video) => video.type === "Trailer");
+  if (trailer) {
+    videoKey = trailer.key; // Now you can reassign since it's declared with 'let'
+  }
+
+  console.log(movieVideoData);
+  console.log(movieVideoData);
+  function handleShow(breakpoint) {
+    setFullscreen(breakpoint);
+    setShow(true);
+  }
   const toggleTab = (tab) => {
     setActiveTab(activeTab === tab ? null : tab);
   };
@@ -24,7 +43,14 @@ const MovieDetail = () => {
   if (isError) {
     return <Alert variant="danger">{error.message}</Alert>;
   }
-
+  const opts = {
+    height: "500",
+    width: "1000",
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+    },
+  };
   const poster_path = data?.backdrop_path;
   const genreIDList = data?.genres || [];
   const genreList = genreIDList.map((genre) => genre.name);
@@ -90,6 +116,39 @@ const MovieDetail = () => {
                       ))}
                     </div>
                   </Col>
+                  {values.map((v, idx) => (
+                    <Button
+                      key={idx}
+                      variant="outline-light"
+                      className="me-2 mb-2 mt-5"
+                      onClick={() => handleShow(v)}
+                    >
+                      예고편 보기
+                      {typeof v === "string" && `below ${v.split("-")[0]}`}
+                    </Button>
+                  ))}
+                  <Modal
+                    show={show}
+                    fullscreen={fullscreen}
+                    onHide={() => setShow(false)}
+                    className="modal-dark-background"
+                  >
+                    <Modal.Header closeButton>
+                      <Modal.Title>예고편</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                      {videoKey ? (
+                        <YouTube
+                          videoId={videoKey}
+                          id={""}
+                          className={""}
+                          title="예고편"
+                        />
+                      ) : (
+                        <p>No video available</p>
+                      )}
+                    </Modal.Body>
+                  </Modal>
                 </Row>
               </Container>
             </div>
