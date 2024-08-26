@@ -3,7 +3,7 @@ import { usePopularMoviesQuery } from "../../../../hooks/usePopularMovies";
 import { Alert } from "react-bootstrap";
 import MovieSlider from "../../../../common/MovieSlider/MovieSlider";
 import { responsive } from "../../../../constants/responsive";
-const PopularMovieSlide = () => {
+const PopularMovieSlider = () => {
   const { data, isLoading, error, isError } = usePopularMoviesQuery();
   console.log("ddd", data);
   if (isLoading) {
@@ -26,4 +26,4 @@ const PopularMovieSlide = () => {
   );
 };
 
-export default PopularMovieSlide;
+export default PopularMovieSlider;
