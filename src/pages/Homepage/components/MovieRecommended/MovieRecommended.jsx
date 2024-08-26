@@ -3,6 +3,7 @@ import { useMovieRecommendedQuery } from "../../../../hooks/useMovieRecommended"
 import { Col, Container, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import "./MovieRecommend.style.css";
+import MovieCard from "../../../../common/MovieCard/MovieCard";
 const MovieRecommended = ({ movie, id }) => {
   const { data, isLoading, error, isError } = useMovieRecommendedQuery(id);
   const navigate = useNavigate();
@@ -14,9 +15,12 @@ const MovieRecommended = ({ movie, id }) => {
     <div style={{ marginTop: "50px" }}>
       <Container>
         <Row>
-          {data?.map((movie) => (
-            <Col lg={6} md={6} sm={12} key={movie.id} className="mb-4">
-              <div
+          {data?.map((movie, index) => (
+            <Col lg={4} md={4} sm={12} key={movie.id} className="mb-4">
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <MovieCard movie={movie} key={index} />
+              </div>
+              {/* <div
                 className="recommendMovie"
                 onClick={() => goMovieDetailPage(movie)}
                 style={{
@@ -30,7 +34,7 @@ const MovieRecommended = ({ movie, id }) => {
                   alt={movie.title}
                   style={{ borderRadius: "5px" }} // Adjust the image style here
                 />
-              </div>
+              </div> */}
             </Col>
           ))}
         </Row>

@@ -51,7 +51,7 @@ const MovieDetail = () => {
       autoplay: 1,
     },
   };
-  const poster_path = data?.backdrop_path;
+  const poster_path = data?.poster_path;
   const genreIDList = data?.genres || [];
   const genreList = genreIDList.map((genre) => genre.name);
   const BadgeList = ["Budget", "Popularity", "Release Day", "Time", "Revenue"];

@@ -1,0 +1,15 @@
+.button {
+  margin-top: 10px;
+}
+.badges {
+  margin: 5px;
+  width: 120px;
+  cursor: pointer;
+  background-color: rgb(66, 66, 66) !important;
+}
+.badge-container {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+/* MoviePage.style.css */
