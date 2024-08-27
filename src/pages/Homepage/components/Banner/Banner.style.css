@@ -54,7 +54,8 @@
 /* 더 작은 화면 (480px 이하) */
 @media (max-width: 480px) {
   .banner {
-    height: 35vh; /* 더 작은 화면에서 배너 높이 조정 */
+    height: 50vh; /* 더 작은 화면에서 배너 높이 조정 */
+    margin-bottom: 100px;
   }
 
   .banner-text-area {
