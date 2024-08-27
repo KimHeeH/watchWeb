@@ -47,3 +47,29 @@
   background-color: black; /* Sets the modal header background to black */
   color: white; /* Sets the header text color to white */
 }
+/* Flexbox를 사용해 Badge와 값이 나란히 배치되도록 설정 */
+/* 기본 배지 컨테이너 스타일 */
+.badge-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.badge-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.badge-item .badge {
+  margin-right: 10px;
+  min-width: 80px; /* 배지의 최소 너비를 설정하여 일관성 유지 */
+}
+
+.badge-item .badge-value {
+  flex-grow: 1;
+  text-align: right; /* 값이 오른쪽에 정렬되도록 설정 */
+  padding-left: 10px;
+}

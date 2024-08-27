@@ -14,7 +14,7 @@ import { useMovieVideoQuery } from "../../hooks/useMovieVideo";
 const MovieDetail = () => {
   const { id } = useParams();
   const { data, isLoading, error, isError } = useMovieDetailQuery(id);
-  const [activeTab, setActiveTab] = useState(null); // 하나의 상태로 관리
+  const [activeTab, setActiveTab] = useState("review"); // 하나의 상태로 관리
   const values = [true];
   const [fullscreen, setFullscreen] = useState(true);
   const [show, setShow] = useState(false);
@@ -91,31 +91,19 @@ const MovieDetail = () => {
               <div className="overview">{data?.overview}</div>
               <Container>
                 <Row>
-                  <Col lg={4}>
-                    <div style={{ display: "flex", flexDirection: "column" }}>
+                  <Col lg={6}>
+                    <div className="badge-container">
                       {BadgeList.map((menu, index) => (
-                        <Badge
-                          key={index}
-                          bg="danger"
-                          style={{
-                            margin: "7px",
-                            width: "80%",
-                          }}
-                        >
-                          {menu}
-                        </Badge>
-                      ))}
-                    </div>
-                  </Col>
-                  <Col lg={8}>
-                    <div style={{ display: "flex", flexDirection: "column" }}>
-                      {BadgeDataList.map((menu, index) => (
-                        <div key={index} style={{ margin: "5px" }}>
-                          {menu}
+                        <div className="badge-item" key={index}>
+                          <Badge bg="danger">{menu}</Badge>
+                          <div className="badge-value">
+                            {BadgeDataList[index]}
+                          </div>
                         </div>
                       ))}
                     </div>
                   </Col>
+
                   {values.map((v, idx) => (
                     <Button
                       key={idx}
