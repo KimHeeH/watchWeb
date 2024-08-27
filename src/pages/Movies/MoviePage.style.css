@@ -1,15 +1,50 @@
-.button {
-  margin-top: 10px;
-}
 .badges {
   margin: 5px;
   width: 120px;
   cursor: pointer;
   background-color: rgb(66, 66, 66) !important;
 }
+
 .badge-container {
   margin-top: 30px;
   margin-bottom: 10px;
   margin-left: 10px;
+  display: flex;
+  flex-wrap: wrap; /* 플렉스박스로 배지들을 감싸고 줄 바꿈을 가능하게 설정 */
+  gap: 10px; /* 배지들 사이에 간격 추가 */
 }
-/* MoviePage.style.css */
+
+/* 모바일에서 Genre들이 3개씩 배열되도록 설정 */
+@media (max-width: 768px) {
+  .badges {
+    width: calc(
+      33.33% - 10px
+    ); /* 3개의 배지를 한 줄에 배치하고 간격을 고려한 너비 설정 */
+    margin: 5px 0; /* 상하 간격을 주고 좌우 간격을 제거 */
+  }
+}
+
+/* 기본적으로 배지들이 2개씩 배치되도록 설정 */
+@media (min-width: 769px) {
+  .badges {
+    width: calc(
+      50% - 10px
+    ); /* 2개의 배지를 한 줄에 배치하고 간격을 고려한 너비 설정 */
+  }
+}
+
+/* 영화 카드들이 모바일에서 2개씩 배열되도록 설정 */
+@media (max-width: 768px) {
+  .movie-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .movie-card-container .col {
+    width: calc(
+      50% - 10px
+    ); /* 한 줄에 2개씩 배치하고 간격을 고려한 너비 설정 */
+    margin-bottom: 10px;
+  }
+}

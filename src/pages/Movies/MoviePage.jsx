@@ -106,9 +106,9 @@ const MoviePage = () => {
           </div>
         </Col>
         <Col lg={8} xs={12}>
-          <Row>
+          <Row className="movie-card-container">
             {sortedMovies.map((movie, index) => (
-              <Col key={index} lg={4} xs={12}>
+              <Col key={index} lg={4} xs={12} className="col">
                 <MovieCard movie={movie} />
               </Col>
             ))}
