@@ -4,7 +4,9 @@
   background-position: left;
   background-repeat: no-repeat;
   cursor: pointer;
+  position: relative; /* 부모 요소에 대해 자식 요소가 절대 위치를 가질 수 있도록 */
 }
+
 .banner:before {
   content: "";
   background: linear-gradient(to top, black, transparent);
@@ -13,6 +15,7 @@
   height: 56vh;
   width: 100%;
 }
+
 .banner-text-area {
   width: 36%;
   display: flex;
@@ -20,7 +23,50 @@
   justify-content: center;
   height: 100%;
   padding: 2rem;
+  position: relative;
+  z-index: 2; /* 텍스트 영역이 배경 위에 표시되도록 */
 }
+
 .banner-text-area > * {
   z-index: 2;
+}
+
+/* 모바일 화면 (768px 이하) */
+@media (max-width: 768px) {
+  .banner {
+    height: 40vh; /* 모바일에서 배너 높이를 조정 */
+  }
+
+  .banner-text-area {
+    width: 90%; /* 텍스트 영역 너비를 화면에 맞추어 조정 */
+    padding: 1rem;
+  }
+
+  .banner h1 {
+    font-size: 1.5rem; /* 모바일에서 제목 글씨 크기 조정 */
+  }
+
+  .banner p {
+    font-size: 1rem; /* 모바일에서 본문 글씨 크기 조정 */
+  }
+}
+
+/* 더 작은 화면 (480px 이하) */
+@media (max-width: 480px) {
+  .banner {
+    height: 30vh; /* 더 작은 화면에서 배너 높이 조정 */
+  }
+
+  .banner-text-area {
+    width: 100%; /* 텍스트 영역을 완전히 넓힘 */
+    padding: 0.5rem;
+  }
+
+  .banner h1 {
+    font-size: 1.2rem; /* 더 작은 화면에서 제목 글씨 크기 조정 */
+  }
+
+  .banner p {
+    font-size: 0.9rem; /* 더 작은 화면에서 본문 글씨 크기 조정 */
+  }
 }
