@@ -56,6 +56,8 @@
   .banner {
     height: 60vh; /* 더 작은 화면에서 배너 높이 조정 */
     margin-bottom: 100px;
+    background-size: cover; /* 배경 이미지가 화면에 맞도록 조정 */
+    background-position: center center;
   }
 
   .banner-text-area {
