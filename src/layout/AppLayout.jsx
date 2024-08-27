@@ -7,6 +7,7 @@ import Navbar from "react-bootstrap/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Outlet, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import "./AppLauout.style.css";
 const AppLayout = () => {
   const [keyword, setKeyword] = useState("");
   const navigate = useNavigate();

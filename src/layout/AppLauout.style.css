@@ -1,0 +1,15 @@
+/* 모바일 화면에서 검색창의 너비 조정 */
+@media (max-width: 768px) {
+  .navbar .form-control {
+    width: 100%; /* 검색창이 화면의 전체 너비를 차지하도록 설정 */
+    margin-bottom: 10px; /* 검색창 아래에 간격 추가 */
+  }
+
+  .navbar .d-flex {
+    flex-direction: column; /* 버튼을 검색창 아래로 배치 */
+  }
+
+  .navbar .btn {
+    width: 100%; /* 버튼도 전체 너비를 차지하도록 설정 */
+  }
+}
