@@ -23,15 +23,14 @@ const MovieDetail = () => {
 
   const trailer = movieVideoData?.find((video) => video.type === "Trailer");
   if (trailer) {
-    videoKey = trailer.key; // Now you can reassign since it's declared with 'let'
+    videoKey = trailer.key;
   }
 
-  console.log(movieVideoData);
-  console.log(movieVideoData);
   function handleShow(breakpoint) {
     setFullscreen(breakpoint);
     setShow(true);
   }
+
   const toggleTab = (tab) => {
     setActiveTab(activeTab === tab ? null : tab);
   };
@@ -43,14 +42,7 @@ const MovieDetail = () => {
   if (isError) {
     return <Alert variant="danger">{error.message}</Alert>;
   }
-  const opts = {
-    height: "500",
-    width: "1000",
-    playerVars: {
-      // https://developers.google.com/youtube/player_parameters
-      autoplay: 1,
-    },
-  };
+
   const poster_path = data?.poster_path;
   const genreIDList = data?.genres || [];
   const genreList = genreIDList.map((genre) => genre.name);
@@ -126,12 +118,9 @@ const MovieDetail = () => {
                     </Modal.Header>
                     <Modal.Body>
                       {videoKey ? (
-                        <YouTube
-                          videoId={videoKey}
-                          id={""}
-                          className={""}
-                          title="예고편"
-                        />
+                        <div className="youtube-video-container">
+                          <YouTube videoId={videoKey} />
+                        </div>
                       ) : (
                         <p>No video available</p>
                       )}

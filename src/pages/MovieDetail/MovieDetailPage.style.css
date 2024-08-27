@@ -49,6 +49,38 @@
 }
 /* Flexbox를 사용해 Badge와 값이 나란히 배치되도록 설정 */
 /* 기본 배지 컨테이너 스타일 */
+/* 모달 창을 화면에 맞게 조정 */
+.modal-dark-background .modal-dialog {
+  max-width: 100%; /* 모달 창이 화면 너비를 넘지 않도록 설정 */
+  margin: 0;
+  padding: 0;
+}
+
+.modal-dark-background .modal-content {
+  width: 100vw; /* 모달 콘텐츠를 화면 너비에 맞춤 */
+  height: 100vh; /* 모달 콘텐츠를 화면 높이에 맞춤 */
+  padding: 0;
+  overflow: hidden; /* 모달 내부에서 스크롤이 발생하지 않도록 설정 */
+}
+
+/* 유튜브 비디오를 반응형으로 만들기 위한 스타일 */
+.youtube-video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 비율 유지 */
+  height: 0;
+  overflow: hidden;
+  width: 100%;
+  background: black;
+}
+
+.youtube-video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .badge-container {
   display: flex;
   flex-direction: column;
@@ -72,20 +104,4 @@
   flex-grow: 1;
   text-align: right; /* 값이 오른쪽에 정렬되도록 설정 */
   padding-left: 10px;
-}
-.youtube-video-container {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 비율을 유지하기 위한 패딩 */
-  height: 0;
-  overflow: hidden;
-  max-width: 100%;
-  background: black;
-}
-
-.youtube-video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 }
