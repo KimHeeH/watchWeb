@@ -4,3 +4,46 @@
   min-height: 100vh; /* 화면 전체 높이를 차지하도록 추가 */
   color: white;
 }
+
+/* 전체 페이지에서 가로 스크롤 방지 */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* 가로 스크롤 방지 */
+  width: 100%; /* 전체 페이지 너비를 100%로 제한 */
+  box-sizing: border-box; /* 패딩과 테두리를 포함하여 요소의 크기를 계산 */
+}
+
+/* 모든 블록 레벨 요소들이 부모 요소의 너비를 넘지 않도록 설정 */
+* {
+  box-sizing: border-box; /* 모든 요소에 박스 모델 적용 */
+}
+
+/* 특정 요소들이 화면을 넘지 않도록 추가적인 보호 조치 */
+.container,
+.wrapper,
+.content,
+.section {
+  max-width: 100%; /* 특정 섹션이나 컨테이너의 너비를 화면 너비로 제한 */
+  overflow-x: hidden; /* 이중 보호로 가로 스크롤 방지 */
+}
+
+/* 미디어 쿼리로 모바일에서의 레이아웃 문제 방지 */
+@media (max-width: 768px) {
+  .container,
+  .wrapper,
+  .content,
+  .section {
+    padding: 0 1rem; /* 작은 화면에서 내부 패딩 조정 */
+  }
+}
+
+@media (max-width: 480px) {
+  .container,
+  .wrapper,
+  .content,
+  .section {
+    padding: 0 0.5rem; /* 더 작은 화면에서 내부 패딩 조정 */
+  }
+}
