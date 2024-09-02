@@ -17,14 +17,14 @@
 /* Responsive adjustments */
 @media (max-width: 576px) {
   .custom-link {
-    font-size: 0.4rem !important; /* Smaller font size on mobile */
+    font-size: 0.5rem !important; /* Smaller font size on mobile */
   }
 
   .custom-form {
     flex-direction: row !important; /* Keep the form elements side-by-side */
   }
   .custom-brand img {
-    max-width: 30px;
+    max-width: 40px;
     /* 모바일에서 이미지 너비를 줄임 */
   }
   .custom-form .form-control {
@@ -36,7 +36,8 @@
   .custom-form button {
     flex-shrink: 0;
     height: 30px; /* Match the height of the input field */
-    padding: 6px 12px;
-    width: 50px;
+
+    width: 30px;
+    font-size: 0.3rem !important;
   }
 }
