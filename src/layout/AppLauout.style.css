@@ -1,15 +1,39 @@
-/* 모바일 화면에서 검색창의 너비 조정 */
-@media (max-width: 768px) {
-  .navbar .form-control {
-    width: 100%; /* 검색창이 화면의 전체 너비를 차지하도록 설정 */
-    margin-bottom: 10px; /* 검색창 아래에 간격 추가 */
+/* General styles */
+.custom-navbar {
+  background-color: black !important;
+}
+
+/* Font size adjustments for mobile */
+.custom-brand img {
+  max-width: 80px;
+}
+
+.custom-link {
+  color: white !important;
+  font-size: 14px; /* Adjust the font size */
+  margin-right: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .custom-link {
+    font-size: 12px; /* Smaller font size on mobile */
   }
 
-  .navbar .d-flex {
-    flex-direction: column; /* 버튼을 검색창 아래로 배치 */
+  .custom-form {
+    flex-direction: row !important; /* Keep the form elements side-by-side */
   }
 
-  .navbar .btn {
-    width: 100%; /* 버튼도 전체 너비를 차지하도록 설정 */
+  .custom-form .form-control {
+    width: auto; /* Adjust width to fit properly */
+    flex-grow: 1;
+    height: 38px;
+  }
+
+  .custom-form button {
+    flex-shrink: 0;
+    height: 38px; /* Match the height of the input field */
+    padding: 6px 12px;
+    width: 50px;
   }
 }

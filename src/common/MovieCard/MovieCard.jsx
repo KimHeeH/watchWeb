@@ -32,12 +32,16 @@ const MovieCard = ({ movie }) => {
       <div className="overlay">
         <h1>{movie.title}</h1>
         {showGenre(movie.genre_ids).map((id) => (
-          <Badge bg="danger">{id}</Badge>
+          <Badge bg="danger" style={{ margin: "5px" }}>
+            {id}
+          </Badge>
         ))}
         <div>
-          <div>{movie.vote_average}</div>
-          <div>{movie.popularity}</div>
-          <div>{movie.adult ? "over18" : "under18"}</div>
+          <div style={{ margin: "10px" }}>{movie.vote_average}</div>
+          <div style={{ margin: "10px" }}>{movie.popularity}</div>
+          <div style={{ margin: "10px" }}>
+            {movie.adult ? "over18" : "under18"}
+          </div>
         </div>
       </div>
     </div>

@@ -100,7 +100,7 @@ const MovieDetail = () => {
                     <Button
                       key={idx}
                       variant="outline-light"
-                      className="me-2 mb-2 mt-5"
+                      className="me-2 mb-4 mt-5"
                       onClick={() => handleShow(v)}
                     >
                       예고편 보기
@@ -131,8 +131,9 @@ const MovieDetail = () => {
             </div>
           </Col>
         </Row>
-        <div className="button-container">
+        <div className="button-container mb-4">
           <Button
+            className=" mb-3"
             variant="outline-light"
             style={{ marginRight: "10px", width: "150px" }}
             onClick={() => toggleTab("review")}
@@ -140,6 +141,7 @@ const MovieDetail = () => {
             Reviews
           </Button>
           <Button
+            className=" mb-3"
             variant="outline-danger"
             style={{ width: "150px" }}
             onClick={() => toggleTab("recommended")}
