@@ -17,7 +17,7 @@
 /* Responsive adjustments */
 @media (max-width: 576px) {
   .custom-link {
-    font-size: 12px; /* Smaller font size on mobile */
+    font-size: 8px; /* Smaller font size on mobile */
   }
 
   .custom-form {
