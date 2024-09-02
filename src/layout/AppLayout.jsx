@@ -24,9 +24,12 @@ const AppLayout = () => {
   };
   return (
     <div className="container">
-      <Navbar style={{ backgroundColor: "black ! important" }}>
+      <Navbar
+        className="custom-navbar"
+        style={{ backgroundColor: "black ! important" }}
+      >
         <Container fluid>
-          <Navbar.Brand href="#" onClick={goHomepage}>
+          <Navbar.Brand className="custom-brand" href="#" onClick={goHomepage}>
             <img
               src="https://loodibee.com/wp-content/uploads/Netflix-logo.png"
               width="100"
@@ -40,6 +43,7 @@ const AppLayout = () => {
               navbarScroll
             >
               <Nav.Link
+                className="custom-link"
                 style={{ color: "white" }}
                 href="#action1"
                 onClick={goHomepage}
@@ -47,6 +51,7 @@ const AppLayout = () => {
                 Home
               </Nav.Link>
               <Nav.Link
+                className="custom-link"
                 style={{ color: "white" }}
                 href="#action2"
                 onClick={goMoviePage}
