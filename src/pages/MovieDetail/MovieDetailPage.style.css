@@ -105,3 +105,10 @@
   text-align: right; /* 값이 오른쪽에 정렬되도록 설정 */
   padding-left: 10px;
 }
+.button-container button {
+  display: flex; /* Flexbox를 사용하여 버튼 내부를 중앙 정렬 */
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
+  padding: 10px 15px; /* 버튼의 패딩을 균형있게 설정 */
+  text-align: center; /* 텍스트를 중앙 정렬 */
+}
