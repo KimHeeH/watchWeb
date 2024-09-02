@@ -143,7 +143,7 @@ const MovieDetail = () => {
           <Button
             className=" mb-3"
             variant="outline-danger"
-            style={{ width: "150px" }}
+            style={{ width: "150px", textAlign: "center" }}
             onClick={() => toggleTab("recommended")}
           >
             Recommended

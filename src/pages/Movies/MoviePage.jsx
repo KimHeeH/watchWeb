@@ -93,7 +93,7 @@ const MoviePage = () => {
             </Dropdown.Item>
           </DropdownButton>
           <div className="badge-container">Genres</div>
-          <div>
+          <div className="mb-5">
             {genreIDList.map((list, index) => (
               <Badge
                 key={index}
