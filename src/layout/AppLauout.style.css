@@ -36,7 +36,6 @@
   .custom-form button {
     flex-shrink: 0;
     height: 30px; /* Match the height of the input field */
-
     width: 30px;
     font-size: 0.3rem !important;
   }
