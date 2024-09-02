@@ -19,30 +19,32 @@ const MovieCard = ({ movie }) => {
     navigate(`/movies/${movie.id}`, movie);
   };
   return (
-    <div
-      style={{
-        backgroundImage:
-          "url(" +
-          `https://media.themoviedb.org/t/p/w300_and_h450_bestv2${posterPath}` +
-          ")",
-      }}
-      className="movie-card"
-      onClick={() => goMovieDetailPage(movie)} // 함수 호출이 아닌 함수 전달로 변경
-    >
-      <div className="overlay">
-        <h1>{movie.title}</h1>
-        <div className="genre-container">
-          {showGenre(movie.genre_ids).map((genre, index) => (
-            <Badge key={index} bg="danger" className="genre-badge">
-              {genre}
-            </Badge>
-          ))}
-        </div>
-        <div>
-          <div style={{ margin: "10px" }}>{movie.vote_average}</div>
-          <div style={{ margin: "10px" }}>{movie.popularity}</div>
-          <div style={{ margin: "10px" }}>
-            {movie.adult ? "over18" : "under18"}
+    <div className="movie-card-container">
+      <div
+        style={{
+          backgroundImage:
+            "url(" +
+            `https://media.themoviedb.org/t/p/w300_and_h450_bestv2${posterPath}` +
+            ")",
+        }}
+        className="movie-card"
+        onClick={() => goMovieDetailPage(movie)} // 함수 호출이 아닌 함수 전달로 변경
+      >
+        <div className="overlay">
+          <h1>{movie.title}</h1>
+          <div className="genre-container">
+            {showGenre(movie.genre_ids).map((genre, index) => (
+              <Badge key={index} bg="danger" className="genre-badge">
+                {genre}
+              </Badge>
+            ))}
+          </div>
+          <div>
+            <div style={{ margin: "10px" }}>{movie.vote_average}</div>
+            <div style={{ margin: "10px" }}>{movie.popularity}</div>
+            <div style={{ margin: "10px" }}>
+              {movie.adult ? "over18" : "under18"}
+            </div>
           </div>
         </div>
       </div>

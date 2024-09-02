@@ -1,3 +1,10 @@
+.movie-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* 카드 간의 간격 */
+  position: relative; /* 자식 요소의 z-index 효과를 받기 위한 설정 */
+  overflow: visible; /* 카드가 확대되었을 때 잘리지 않도록 설정 */
+}
 .movie-card {
   width: 220px;
   height: 330px;
@@ -29,7 +36,7 @@
 
 .movie-card:hover {
   transform: scale(1.1); /* 너무 크게 확대하지 않도록 조정 */
-  z-index: 2;
+  z-index: 10;
 }
 .genre-container {
   display: flex;
